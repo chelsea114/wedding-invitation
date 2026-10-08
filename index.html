@@ -3,17 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan</title>
+
+    <title>Undangan Pernikahan | Andi & Sinta</title>
+
+    <meta name="description" content="Undangan pernikahan Andi & Sinta">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f5f0;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* COVER */
+
+        .cover {
+            background: linear-gradient(
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.45)
+            ),
+            url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80")
+            center / cover no-repeat;
+
+            color: white;
+        }
+
+        .cover-small {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .cover h1 {
+            font-size: clamp(45px, 12vw, 80px);
+            font-weight: normal;
+            line-height: 1.1;
+        }
+
+        .cover p {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .open-button {
+            margin-top: 35px;
+            padding: 13px 30px;
+            border: 1px solid white;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .open-button:hover {
+            background: white;
+            color: #333;
+        }
+
+        /* INTRO */
+
+        .intro {
+            background: #f8f5f0;
+        }
+
+        .label {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .intro h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .intro-text {
+            max-width: 600px;
+            color: #666;
+        }
+
+        /* COUPLE */
+
+        .couple {
+            background: white;
+        }
+
+        .couple h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 40px;
+        }
+
+        .couple-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .person {
+            max-width: 280px;
+        }
+
+        .person h3 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .person p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .and {
+            font-size: 30px;
+            font-style: italic;
+        }
+
+        /* EVENT */
+
+        .event {
+            background: #eee9e1;
+        }
+
+        .event h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 35px;
+        }
+
+        .event-box {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .event-box h3 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .event-box p {
+            color: #666;
+            margin: 8px 0;
+        }
+
+        .map-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 11px 25px;
+            border-radius: 25px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* CLOSING */
+
+        .closing {
+            background: #292724;
+            color: white;
+        }
+
+        .closing h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .closing p {
+            max-width: 550px;
+            color: #ddd;
+        }
+
+        .closing .names {
+            margin-top: 35px;
+            font-size: 25px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .couple-container {
+                gap: 25px;
+            }
+
+            .and {
+                width: 100%;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <h1>Andi & Sinta</h1>
+    <!-- COVER -->
 
-    <p>Dengan penuh kebahagiaan, kami mengundang Anda
-    untuk hadir di pernikahan kami.</p>
+    <section class="cover">
 
-    <p>12 Desember 2026</p>
+        <div class="cover-small">
+            The Wedding Of
+        </div>
+
+        <h1>Andi<br>&<br>Sinta</h1>
+
+        <p>12 Desember 2026</p>
+
+        <a href="#intro" class="open-button">
+            Buka Undangan
+        </a>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro" id="intro">
+
+        <div class="label">
+            Assalamu'alaikum
+        </div>
+
+        <h2>Dengan penuh kebahagiaan</h2>
+
+        <p class="intro-text">
+            Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa,
+            kami bermaksud mengundang Bapak/Ibu/Saudara/i
+            untuk hadir dalam acara pernikahan kami.
+        </p>
+
+    </section>
+
+
+    <!-- COUPLE -->
+
+    <section class="couple">
+
+        <div class="label">
+            The Bride & Groom
+        </div>
+
+        <h2>Our Story</h2>
+
+        <div class="couple-container">
+
+            <div class="person">
+
+                <h3>Andi Pratama</h3>
+
+                <p>
+                    Putra dari<br>
+                    Bapak Nama Ayah<br>
+                    & Ibu Nama Ibu
+                </p>
+
+            </div>
+
+            <div class="and">
+                &
+            </div>
+
+            <div class="person">
+
+                <h3>Sinta Maharani</h3>
+
+                <p>
+                    Putri dari<br>
+                    Bapak Nama Ayah<br>
+                    & Ibu Nama Ibu
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENT -->
+
+    <section class="event">
+
+        <div class="label">
+            Save The Date
+        </div>
+
+        <h2>Wedding Event</h2>
+
+        <div class="event-box">
+
+            <h3>Resepsi Pernikahan</h3>
+
+            <p>
+                Sabtu, 12 Desember 2026
+            </p>
+
+            <p>
+                11.00 WIB – selesai
+            </p>
+
+            <p>
+                Hotel Contoh<br>
+                Pontianak, Kalimantan Barat
+            </p>
+
+            <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="map-button"
+            >
+                Lihat Lokasi
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CLOSING -->
+
+    <section class="closing">
+
+        <h2>Terima Kasih</h2>
+
+        <p>
+            Merupakan suatu kehormatan dan kebahagiaan
+            bagi kami apabila Bapak/Ibu/Saudara/i
+            berkenan hadir dan memberikan doa restu.
+        </p>
+
+        <div class="names">
+            Andi & Sinta
+        </div>
+
+    </section>
 
 </body>
 </html>
