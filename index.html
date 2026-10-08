@@ -31,7 +31,9 @@
       text-align: center;
     }
 
-    /* COVER */
+    /* =========================
+       COVER
+    ========================= */
 
     .cover {
       min-height: 100vh;
@@ -100,7 +102,10 @@
       color: #333;
     }
 
-    /* GENERAL */
+
+    /* =========================
+       GENERAL
+    ========================= */
 
     .container {
       max-width: 800px;
@@ -116,11 +121,16 @@
     .divider {
       width: 60px;
       height: 1px;
+
       background: #8d8275;
+
       margin: 20px auto 30px;
     }
 
-    /* WELCOME */
+
+    /* =========================
+       WELCOME
+    ========================= */
 
     #welcome {
       background: #f7f3ed;
@@ -132,7 +142,10 @@
       font-size: 17px;
     }
 
-    /* COUPLE */
+
+    /* =========================
+       COUPLE
+    ========================= */
 
     .couple {
       background: #fffdf9;
@@ -140,24 +153,33 @@
 
     .couple-grid {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 35px;
+
       margin-top: 40px;
     }
 
     .person h3 {
       font-size: 28px;
       font-weight: normal;
+
       margin-bottom: 10px;
     }
 
     .person p {
       font-family: Arial, sans-serif;
+
       font-size: 14px;
+
       color: #777;
     }
 
-    /* COUNTDOWN */
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
 
     .countdown-section {
       background: #ebe5dc;
@@ -165,16 +187,21 @@
 
     .countdown {
       display: grid;
+
       grid-template-columns: repeat(4, 1fr);
+
       gap: 10px;
 
       max-width: 500px;
+
       margin: 35px auto 0;
     }
 
     .countdown-box {
       background: white;
+
       padding: 18px 5px;
+
       border-radius: 8px;
     }
 
@@ -188,12 +215,18 @@
 
     .label {
       font-family: Arial, sans-serif;
+
       font-size: 11px;
+
       text-transform: uppercase;
+
       color: #777;
     }
 
-    /* EVENT */
+
+    /* =========================
+       EVENT
+    ========================= */
 
     .event {
       background: #fffdf9;
@@ -201,27 +234,36 @@
 
     .event-box {
       max-width: 500px;
+
       margin: 35px auto 0;
 
       padding: 35px 20px;
 
       border: 1px solid #ddd3c6;
+
       border-radius: 10px;
     }
 
     .event-box h3 {
       font-size: 27px;
+
       font-weight: normal;
+
       margin-bottom: 15px;
     }
 
     .event-box p {
       font-family: Arial, sans-serif;
+
       font-size: 14px;
+
       margin-bottom: 8px;
     }
 
-    /* MESSAGE */
+
+    /* =========================
+       MESSAGE
+    ========================= */
 
     .message {
       background: #ebe5dc;
@@ -229,17 +271,24 @@
 
     .message p {
       max-width: 650px;
+
       margin: auto;
+
       font-size: 17px;
     }
 
-    /* CLOSING */
+
+    /* =========================
+       CLOSING
+    ========================= */
 
     .closing {
       min-height: 70vh;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       color: white;
@@ -252,6 +301,7 @@
         url("https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=1200&q=80");
 
       background-size: cover;
+
       background-position: center;
     }
 
@@ -261,28 +311,39 @@
 
     .closing p {
       font-size: 17px;
+
       margin-bottom: 25px;
     }
 
     .closing h2 {
       font-size: 35px;
+
       font-weight: normal;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 25px;
+
       text-align: center;
 
       background: #3d3935;
+
       color: white;
 
       font-family: Arial, sans-serif;
+
       font-size: 12px;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -300,6 +361,7 @@
 
       .countdown {
         grid-template-columns: repeat(2, 1fr);
+
         max-width: 300px;
       }
 
@@ -316,7 +378,9 @@
 <body>
 
 
-  <!-- COVER -->
+  <!-- =========================
+       COVER
+  ========================= -->
 
   <section class="cover">
 
@@ -327,17 +391,25 @@
       </div>
 
       <h1>
+
         <span id="groomName"></span>
+
         &
+
         <span id="brideName"></span>
+
       </h1>
 
       <div class="cover-date">
+
         <span id="weddingDate"></span>
+
       </div>
 
       <a href="#welcome" class="button">
+
         Buka Undangan
+
       </a>
 
     </div>
@@ -345,7 +417,9 @@
   </section>
 
 
-  <!-- WELCOME -->
+  <!-- =========================
+       WELCOME
+  ========================= -->
 
   <section id="welcome">
 
@@ -368,7 +442,9 @@
   </section>
 
 
-  <!-- COUPLE -->
+  <!-- =========================
+       COUPLE
+  ========================= -->
 
   <section class="couple">
 
@@ -391,11 +467,15 @@
         <div class="person">
 
           <h3>
+
             <span id="groomFullName"></span>
+
           </h3>
 
           <p>
+
             <span id="groomParents"></span>
+
           </p>
 
         </div>
@@ -404,11 +484,15 @@
         <div class="person">
 
           <h3>
+
             <span id="brideFullName"></span>
+
           </h3>
 
           <p>
+
             <span id="brideParents"></span>
+
           </p>
 
         </div>
@@ -421,7 +505,9 @@
   </section>
 
 
-  <!-- COUNTDOWN -->
+  <!-- =========================
+       COUNTDOWN
+  ========================= -->
 
   <section class="countdown-section">
 
@@ -508,7 +594,9 @@
   </section>
 
 
-  <!-- EVENT -->
+  <!-- =========================
+       EVENT
+  ========================= -->
 
   <section class="event">
 
@@ -528,35 +616,48 @@
       <div class="event-box">
 
         <h3>
+
           <span id="venueName"></span>
+
         </h3>
+
 
         <p>
           <strong>Tanggal</strong>
         </p>
 
         <p>
+
           <span id="weddingDate"></span>
+
         </p>
 
+
         <br>
+
 
         <p>
           <strong>Waktu</strong>
         </p>
 
         <p>
+
           <span id="weddingTime"></span>
+
         </p>
 
+
         <br>
+
 
         <p>
           <strong>Lokasi</strong>
         </p>
 
         <p>
+
           <span id="venueAddress"></span>
+
         </p>
 
       </div>
@@ -566,7 +667,9 @@
   </section>
 
 
-  <!-- MESSAGE -->
+  <!-- =========================
+       MESSAGE
+  ========================= -->
 
   <section class="message">
 
@@ -592,7 +695,9 @@
   </section>
 
 
-  <!-- CLOSING -->
+  <!-- =========================
+       CLOSING
+  ========================= -->
 
   <section class="closing">
 
@@ -603,7 +708,9 @@
       <h2>
 
         <span id="groomNameClosing"></span>
+
         &
+
         <span id="brideNameClosing"></span>
 
       </h2>
@@ -613,37 +720,24 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
+
     © 2026 Wedding Invitation
+
   </footer>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       DATA & SCRIPT
+  ========================= -->
 
   <script src="data.js"></script>
+
   <script src="script.js"></script>
-
-
-  <script>
-
-    /*
-      Mengisi nama di bagian closing.
-      Data utama tetap berasal dari data.js.
-    */
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-      document.getElementById("groomNameClosing").textContent =
-        wedding.groom.name;
-
-      document.getElementById("brideNameClosing").textContent =
-        wedding.bride.name;
-
-    });
-
-  </script>
 
 
 </body>
