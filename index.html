@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Undangan Pernikahan | Andi & Sinta</title>
-
-    <meta name="description" content="Undangan pernikahan Andi & Sinta">
+    <title>The Wedding of Andi & Sinta</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -21,59 +20,76 @@
 
         body {
             font-family: Georgia, "Times New Roman", serif;
-            background: #f8f5f0;
-            color: #333;
-            line-height: 1.7;
+            background: #f7f3ed;
+            color: #332f2b;
         }
 
-        section {
-            min-height: 100vh;
-            padding: 60px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        /* COVER */
+        /* =========================
+           COVER
+        ========================= */
 
         .cover {
-            background: linear-gradient(
-                rgba(0,0,0,0.35),
-                rgba(0,0,0,0.45)
-            ),
-            url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80")
-            center / cover no-repeat;
+            height: 100vh;
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
 
             color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.42),
+                    rgba(0,0,0,0.55)
+                ),
+                url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85")
+                center / cover;
+
+            position: relative;
         }
 
-        .cover-small {
-            font-size: 14px;
-            letter-spacing: 3px;
+        .cover-content {
+            padding: 30px;
+
+            animation: fadeIn 2s ease;
+        }
+
+        .small-title {
+            font-size: 13px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+
+            margin-bottom: 25px;
         }
 
         .cover h1 {
-            font-size: clamp(45px, 12vw, 80px);
+            font-size: clamp(45px, 13vw, 90px);
             font-weight: normal;
-            line-height: 1.1;
+            line-height: 1.05;
         }
 
-        .cover p {
-            margin-top: 20px;
-            font-size: 16px;
+        .cover-date {
+            margin-top: 25px;
+            font-size: 15px;
+            letter-spacing: 2px;
         }
 
         .open-button {
-            margin-top: 35px;
-            padding: 13px 30px;
+            display: inline-block;
+
+            margin-top: 40px;
+
+            padding: 14px 32px;
+
             border: 1px solid white;
-            border-radius: 30px;
+            border-radius: 50px;
+
             color: white;
             text-decoration: none;
+
             transition: 0.3s;
         }
 
@@ -82,150 +98,236 @@
             color: #333;
         }
 
-        /* INTRO */
+        /* =========================
+           GENERAL
+        ========================= */
 
-        .intro {
-            background: #f8f5f0;
+        section {
+            padding: 90px 20px;
+            text-align: center;
         }
 
-        .label {
-            font-size: 13px;
-            letter-spacing: 3px;
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: #888;
-            margin-bottom: 20px;
+
+            color: #9b8d7c;
+
+            margin-bottom: 18px;
         }
 
-        .intro h2 {
-            font-size: 38px;
+        h2 {
+            font-size: clamp(32px, 8vw, 48px);
             font-weight: normal;
+
             margin-bottom: 25px;
         }
 
-        .intro-text {
+        .description {
             max-width: 600px;
-            color: #666;
+            margin: auto;
+
+            color: #716a63;
+            line-height: 1.9;
         }
 
-        /* COUPLE */
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            background: #f7f3ed;
+        }
+
+        /* =========================
+           COUPLE
+        ========================= */
 
         .couple {
             background: white;
         }
 
-        .couple h2 {
-            font-size: 38px;
-            font-weight: normal;
-            margin-bottom: 40px;
-        }
-
         .couple-container {
+            max-width: 800px;
+
+            margin: 50px auto 0;
+
             display: flex;
-            gap: 40px;
+
             justify-content: center;
             align-items: center;
+
+            gap: 50px;
+
             flex-wrap: wrap;
         }
 
         .person {
-            max-width: 280px;
+            width: 250px;
         }
 
         .person h3 {
-            font-size: 28px;
+            font-size: 27px;
             font-weight: normal;
-            margin-bottom: 10px;
+
+            margin-bottom: 12px;
         }
 
         .person p {
             color: #777;
-            font-size: 14px;
+            line-height: 1.8;
         }
 
         .and {
-            font-size: 30px;
+            font-size: 35px;
             font-style: italic;
         }
 
-        /* EVENT */
+        /* =========================
+           COUNTDOWN
+        ========================= */
+
+        .countdown-section {
+            background: #ebe4da;
+        }
+
+        .countdown {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 40px;
+
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: white;
+
+            width: 85px;
+            height: 85px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .time-number {
+            font-size: 25px;
+        }
+
+        .time-label {
+            font-size: 10px;
+
+            letter-spacing: 1px;
+
+            color: #999;
+
+            margin-top: 3px;
+        }
+
+        /* =========================
+           EVENT
+        ========================= */
 
         .event {
-            background: #eee9e1;
-        }
-
-        .event h2 {
-            font-size: 38px;
-            font-weight: normal;
-            margin-bottom: 35px;
-        }
-
-        .event-box {
             background: white;
-            max-width: 500px;
-            width: 100%;
-            padding: 35px 25px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .event-box h3 {
-            font-size: 25px;
+        .event-container {
+            max-width: 550px;
+
+            margin: 40px auto 0;
+
+            background: #f7f3ed;
+
+            padding: 40px 25px;
+
+            border-radius: 15px;
+        }
+
+        .event-container h3 {
+            font-size: 27px;
             font-weight: normal;
-            margin-bottom: 15px;
+
+            margin-bottom: 20px;
         }
 
-        .event-box p {
+        .event-container p {
+            margin: 8px;
+
             color: #666;
-            margin: 8px 0;
         }
 
         .map-button {
             display: inline-block;
+
             margin-top: 25px;
-            padding: 11px 25px;
-            border-radius: 25px;
-            background: #333;
+
+            padding: 12px 28px;
+
+            background: #332f2b;
+
             color: white;
+
             text-decoration: none;
+
+            border-radius: 30px;
         }
 
-        /* CLOSING */
+        /* =========================
+           CLOSING
+        ========================= */
 
         .closing {
-            background: #292724;
+            min-height: 80vh;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+
+            background: #302d2a;
+
             color: white;
         }
 
-        .closing h2 {
-            font-size: 38px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-
-        .closing p {
-            max-width: 550px;
+        .closing .description {
             color: #ddd;
         }
 
-        .closing .names {
+        .closing-names {
             margin-top: 35px;
-            font-size: 25px;
+
+            font-size: 27px;
         }
 
-        /* MOBILE */
+        /* =========================
+           ANIMATION
+        ========================= */
 
-        @media (max-width: 600px) {
+        @keyframes fadeIn {
 
-            section {
-                padding: 50px 20px;
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
 
-            .couple-container {
-                gap: 25px;
-            }
-
-            .and {
-                width: 100%;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
 
         }
@@ -235,146 +337,357 @@
 
 <body>
 
-    <!-- COVER -->
 
-    <section class="cover">
+<!-- =========================
+     COVER
+========================= -->
 
-        <div class="cover-small">
+<section class="cover">
+
+    <div class="cover-content">
+
+        <div class="small-title">
             The Wedding Of
         </div>
 
-        <h1>Andi<br>&<br>Sinta</h1>
+        <h1>
+            Andi<br>
+            &<br>
+            Sinta
+        </h1>
 
-        <p>12 Desember 2026</p>
+        <div class="cover-date">
+            12 · 12 · 2026
+        </div>
 
         <a href="#intro" class="open-button">
             Buka Undangan
         </a>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- INTRO -->
+<!-- =========================
+     INTRO
+========================= -->
 
-    <section class="intro" id="intro">
+<section class="intro" id="intro">
 
-        <div class="label">
-            Assalamu'alaikum
-        </div>
+    <div class="section-label">
+        Welcome
+    </div>
 
-        <h2>Dengan penuh kebahagiaan</h2>
+    <h2>
+        Dengan penuh kebahagiaan
+    </h2>
 
-        <p class="intro-text">
-            Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa,
-            kami bermaksud mengundang Bapak/Ibu/Saudara/i
-            untuk hadir dalam acara pernikahan kami.
-        </p>
+    <p class="description">
 
-    </section>
+        Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa,
+        kami bermaksud mengundang Bapak/Ibu/Saudara/i
+        untuk hadir dan memberikan doa restu
+        pada hari bahagia kami.
 
+    </p>
 
-    <!-- COUPLE -->
-
-    <section class="couple">
-
-        <div class="label">
-            The Bride & Groom
-        </div>
-
-        <h2>Our Story</h2>
-
-        <div class="couple-container">
-
-            <div class="person">
-
-                <h3>Andi Pratama</h3>
-
-                <p>
-                    Putra dari<br>
-                    Bapak Nama Ayah<br>
-                    & Ibu Nama Ibu
-                </p>
-
-            </div>
-
-            <div class="and">
-                &
-            </div>
-
-            <div class="person">
-
-                <h3>Sinta Maharani</h3>
-
-                <p>
-                    Putri dari<br>
-                    Bapak Nama Ayah<br>
-                    & Ibu Nama Ibu
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- EVENT -->
+<!-- =========================
+     COUPLE
+========================= -->
 
-    <section class="event">
+<section class="couple">
 
-        <div class="label">
-            Save The Date
-        </div>
+    <div class="section-label">
+        The Bride & Groom
+    </div>
 
-        <h2>Wedding Event</h2>
+    <h2>
+        Happy Together
+    </h2>
 
-        <div class="event-box">
 
-            <h3>Resepsi Pernikahan</h3>
+    <div class="couple-container">
+
+
+        <div class="person">
+
+            <h3>
+                Andi Pratama
+            </h3>
 
             <p>
-                Sabtu, 12 Desember 2026
+                Putra dari<br>
+                Bapak Nama Ayah<br>
+                & Ibu Nama Ibu
             </p>
-
-            <p>
-                11.00 WIB – selesai
-            </p>
-
-            <p>
-                Hotel Contoh<br>
-                Pontianak, Kalimantan Barat
-            </p>
-
-            <a
-                href="https://maps.google.com"
-                target="_blank"
-                class="map-button"
-            >
-                Lihat Lokasi
-            </a>
 
         </div>
 
-    </section>
+
+        <div class="and">
+            &
+        </div>
 
 
-    <!-- CLOSING -->
+        <div class="person">
 
-    <section class="closing">
+            <h3>
+                Sinta Maharani
+            </h3>
 
-        <h2>Terima Kasih</h2>
+            <p>
+                Putri dari<br>
+                Bapak Nama Ayah<br>
+                & Ibu Nama Ibu
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COUNTDOWN
+========================= -->
+
+<section class="countdown-section">
+
+    <div class="section-label">
+        Save The Date
+    </div>
+
+    <h2>
+        Counting Down
+    </h2>
+
+    <div class="countdown">
+
+        <div class="time-box">
+
+            <div class="time-number" id="days">
+                0
+            </div>
+
+            <div class="time-label">
+                HARI
+            </div>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <div class="time-number" id="hours">
+                0
+            </div>
+
+            <div class="time-label">
+                JAM
+            </div>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <div class="time-number" id="minutes">
+                0
+            </div>
+
+            <div class="time-label">
+                MENIT
+            </div>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <div class="time-number" id="seconds">
+                0
+            </div>
+
+            <div class="time-label">
+                DETIK
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EVENT
+========================= -->
+
+<section class="event">
+
+    <div class="section-label">
+        Wedding Day
+    </div>
+
+    <h2>
+        Our Special Day
+    </h2>
+
+
+    <div class="event-container">
+
+        <h3>
+            Resepsi Pernikahan
+        </h3>
 
         <p>
-            Merupakan suatu kehormatan dan kebahagiaan
-            bagi kami apabila Bapak/Ibu/Saudara/i
-            berkenan hadir dan memberikan doa restu.
+            Sabtu, 12 Desember 2026
         </p>
 
-        <div class="names">
-            Andi & Sinta
-        </div>
+        <p>
+            11.00 WIB – selesai
+        </p>
 
-    </section>
+        <p>
+            Hotel Contoh
+        </p>
+
+        <p>
+            Pontianak, Kalimantan Barat
+        </p>
+
+
+        <a
+            href="https://maps.google.com"
+            target="_blank"
+            class="map-button"
+        >
+            Lihat Lokasi
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CLOSING
+========================= -->
+
+<section class="closing">
+
+    <div class="section-label">
+        Thank You
+    </div>
+
+    <h2>
+        Sampai Jumpa
+    </h2>
+
+    <p class="description">
+
+        Kehadiran dan doa restu Anda
+        merupakan kebahagiaan bagi kami.
+
+    </p>
+
+    <div class="closing-names">
+        Andi & Sinta
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COUNTDOWN SCRIPT
+========================= -->
+
+<script>
+
+    const weddingDate =
+        new Date("December 12, 2026 11:00:00").getTime();
+
+
+    function updateCountdown() {
+
+        const now = new Date().getTime();
+
+        const distance = weddingDate - now;
+
+
+        if (distance <= 0) {
+
+            document.getElementById("days").innerText = "0";
+            document.getElementById("hours").innerText = "0";
+            document.getElementById("minutes").innerText = "0";
+            document.getElementById("seconds").innerText = "0";
+
+            return;
+
+        }
+
+
+        const days =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60 * 24))
+                    /
+                    (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60))
+                    /
+                    (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (distance %
+                    (1000 * 60))
+                    /
+                    1000
+            );
+
+
+        document.getElementById("days")
+            .innerText = days;
+
+        document.getElementById("hours")
+            .innerText = hours;
+
+        document.getElementById("minutes")
+            .innerText = minutes;
+
+        document.getElementById("seconds")
+            .innerText = seconds;
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+</script>
+
 
 </body>
 </html>
