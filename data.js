@@ -13,7 +13,6 @@ const wedding = {
 
   date: "12 Desember 2026",
   time: "11.00 WIB",
-  countdown: "2026-12-12T11:00:00+07:00",
 
   venue: {
     name: "Gedung Pernikahan Pontianak",
@@ -21,8 +20,13 @@ const wedding = {
   },
 
   message: {
-    opening: "Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.",
-    
-    closing: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu."
+      openingMessage:
+    "Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami.",
+
+  closingMessage:
+    "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.",
+
+  countdown: "2026-12-12T11:00:00+07:00"
+};
   }
 };
