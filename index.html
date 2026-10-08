@@ -351,9 +351,9 @@
         </div>
 
         <h1>
-            Andi<br>
-            &<br>
-            Sinta
+            <span id="groomName"></span>
+            <br> &<br>
+            <span id="brideName"></span>
         </h1>
 
         <div class="cover-date">
@@ -416,13 +416,11 @@
         <div class="person">
 
             <h3>
-                Andi Pratama
+                <span id="groomFullName"></span>
             </h3>
 
             <p>
-                Putra dari<br>
-                Bapak Nama Ayah<br>
-                & Ibu Nama Ibu
+                <span id="groomParents"></span>
             </p>
 
         </div>
@@ -436,13 +434,11 @@
         <div class="person">
 
             <h3>
-                Sinta Maharani
+                <span id="brideFullName"></span>
             </h3>
 
             <p>
-                Putri dari<br>
-                Bapak Nama Ayah<br>
-                & Ibu Nama Ibu
+                <span id="brideParents"></span>
             </p>
 
         </div>
@@ -547,23 +543,20 @@
         </h3>
 
         <p>
-            Sabtu, 12 Desember 2026
+            <span id="weddingDate"></span>
         </p>
 
         <p>
-            11.00 WIB – selesai
+            <span id="weddingTime"></span>
         </p>
 
         <p>
-            Hotel Contoh
+            <span id="venueName"></span>
         </p>
-
         <p>
-            Pontianak, Kalimantan Barat
+             <span id="venueAddress"></span>
         </p>
-
-
-        <a
+            <a
             href="https://maps.google.com"
             target="_blank"
             class="map-button"
@@ -583,22 +576,11 @@
 <section class="closing">
 
     <div class="section-label">
-        Thank You
-    </div>
-
-    <h2>
-        Sampai Jumpa
-    </h2>
-
-    <p class="description">
-
-        Kehadiran dan doa restu Anda
-        merupakan kebahagiaan bagi kami.
-
-    </p>
+        <span id="closingMessage"></span>
 
     <div class="closing-names">
-        Andi & Sinta
+        <span id="groomName"></span> & 
+        <span id="brideName"></span>
     </div>
 
 </section>
@@ -611,7 +593,7 @@
 <script>
 
     const weddingDate =
-        new Date("December 12, 2026 11:00:00").getTime();
+        new Date("<span id="weddingDate"></span> <span id="weddingTime"></span>").getTime();
 
 
     function updateCountdown() {
