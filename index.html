@@ -1,676 +1,651 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>The Wedding of <span id="groomName"></span> & <span id="brideName"></span>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #f7f3ed;
-            color: #332f2b;
-        }
-
-        /* =========================
-           COVER
-        ========================= */
-
-        .cover {
-            height: 100vh;
-            min-height: 650px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,0.42),
-                    rgba(0,0,0,0.55)
-                ),
-                url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85")
-                center / cover;
-
-            position: relative;
-        }
-
-        .cover-content {
-            padding: 30px;
-
-            animation: fadeIn 2s ease;
-        }
-
-        .small-title {
-            font-size: 13px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-
-            margin-bottom: 25px;
-        }
-
-        .cover h1 {
-            font-size: clamp(45px, 13vw, 90px);
-            font-weight: normal;
-            line-height: 1.05;
-        }
-
-        .cover-date {
-            margin-top: 25px;
-            font-size: 15px;
-            letter-spacing: 2px;
-        }
-
-        .open-button {
-            display: inline-block;
-
-            margin-top: 40px;
-
-            padding: 14px 32px;
-
-            border: 1px solid white;
-            border-radius: 50px;
-
-            color: white;
-            text-decoration: none;
-
-            transition: 0.3s;
-        }
-
-        .open-button:hover {
-            background: white;
-            color: #333;
-        }
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        section {
-            padding: 90px 20px;
-            text-align: center;
-        }
-
-        .section-label {
-            font-size: 12px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-
-            color: #9b8d7c;
-
-            margin-bottom: 18px;
-        }
-
-        h2 {
-            font-size: clamp(32px, 8vw, 48px);
-            font-weight: normal;
-
-            margin-bottom: 25px;
-        }
-
-        .description {
-            max-width: 600px;
-            margin: auto;
-
-            color: #716a63;
-            line-height: 1.9;
-        }
-
-        /* =========================
-           INTRO
-        ========================= */
-
-        .intro {
-            background: #f7f3ed;
-        }
-
-        /* =========================
-           COUPLE
-        ========================= */
-
-        .couple {
-            background: white;
-        }
-
-        .couple-container {
-            max-width: 800px;
-
-            margin: 50px auto 0;
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            gap: 50px;
-
-            flex-wrap: wrap;
-        }
-
-        .person {
-            width: 250px;
-        }
-
-        .person h3 {
-            font-size: 27px;
-            font-weight: normal;
-
-            margin-bottom: 12px;
-        }
-
-        .person p {
-            color: #777;
-            line-height: 1.8;
-        }
-
-        .and {
-            font-size: 35px;
-            font-style: italic;
-        }
-
-        /* =========================
-           COUNTDOWN
-        ========================= */
-
-        .countdown-section {
-            background: #ebe4da;
-        }
-
-        .countdown {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 12px;
-
-            margin-top: 40px;
-
-            flex-wrap: wrap;
-        }
-
-        .time-box {
-            background: white;
-
-            width: 85px;
-            height: 85px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 10px;
-
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-
-        .time-number {
-            font-size: 25px;
-        }
-
-        .time-label {
-            font-size: 10px;
-
-            letter-spacing: 1px;
-
-            color: #999;
-
-            margin-top: 3px;
-        }
-
-        /* =========================
-           EVENT
-        ========================= */
-
-        .event {
-            background: white;
-        }
-
-        .event-container {
-            max-width: 550px;
-
-            margin: 40px auto 0;
-
-            background: #f7f3ed;
-
-            padding: 40px 25px;
-
-            border-radius: 15px;
-        }
-
-        .event-container h3 {
-            font-size: 27px;
-            font-weight: normal;
-
-            margin-bottom: 20px;
-        }
-
-        .event-container p {
-            margin: 8px;
-
-            color: #666;
-        }
-
-        .map-button {
-            display: inline-block;
-
-            margin-top: 25px;
-
-            padding: 12px 28px;
-
-            background: #332f2b;
-
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 30px;
-        }
-
-        /* =========================
-           CLOSING
-        ========================= */
-
-        .closing {
-            min-height: 80vh;
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            flex-direction: column;
-
-            background: #302d2a;
-
-            color: white;
-        }
-
-        .closing .description {
-            color: #ddd;
-        }
-
-        .closing-names {
-            margin-top: 35px;
-
-            font-size: 27px;
-        }
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        @keyframes fadeIn {
-
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-    </style>
-</head>
-    
-<body>
-
-
-<!-- =========================
-     COVER
-========================= -->
-
-<section class="cover">
-
-    <div class="cover-content">
-
-        <div class="small-title">
-            The Wedding Of
-        </div>
-
-        <h1>
-            <span id="groomName"></span>
-            <br> &<br>
-            <span id="brideName"></span>
-        </h1>
-
-        <div class="cover-date">
-            12 · 12 · 2026
-        </div>
-
-        <a href="#intro" class="open-button">
-            Buka Undangan
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     INTRO
-========================= -->
-
-<section class="intro" id="intro">
-
-    <div class="section-label">
-        Welcome
-    </div>
-
-    <h2>
-        Dengan penuh kebahagiaan
-    </h2>
-
-    <p class="description">
-
-        Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa,
-        kami bermaksud mengundang Bapak/Ibu/Saudara/i
-        untuk hadir dan memberikan doa restu
-        pada hari bahagia kami.
-
-    </p>
-
-</section>
-
-
-<!-- =========================
-     COUPLE
-========================= -->
-
-<section class="couple">
-
-    <div class="section-label">
-        The Bride & Groom
-    </div>
-
-    <h2>
-        Happy Together
-    </h2>
-
-
-    <div class="couple-container">
-
-
-        <div class="person">
-
-            <h3>
-                <span id="groomFullName"></span>
-            </h3>
-
-            <p>
-                <span id="groomParents"></span>
-            </p>
-
-        </div>
-
-
-        <div class="and">
-            &
-        </div>
-
-
-        <div class="person">
-
-            <h3>
-                <span id="brideFullName"></span>
-            </h3>
-
-            <p>
-                <span id="brideParents"></span>
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     COUNTDOWN
-========================= -->
-
-<section class="countdown-section">
-
-    <div class="section-label">
-        Save The Date
-    </div>
-
-    <h2>
-        Counting Down
-    </h2>
-
-    <div class="countdown">
-
-        <div class="time-box">
-
-            <div class="time-number" id="days">
-                0
-            </div>
-
-            <div class="time-label">
-                HARI
-            </div>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <div class="time-number" id="hours">
-                0
-            </div>
-
-            <div class="time-label">
-                JAM
-            </div>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <div class="time-number" id="minutes">
-                0
-            </div>
-
-            <div class="time-label">
-                MENIT
-            </div>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <div class="time-number" id="seconds">
-                0
-            </div>
-
-            <div class="time-label">
-                DETIK
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     EVENT
-========================= -->
-
-<section class="event">
-
-    <div class="section-label">
-        Wedding Day
-    </div>
-
-    <h2>
-        Our Special Day
-    </h2>
-
-
-    <div class="event-container">
-
-        <h3>
-            Resepsi Pernikahan
-        </h3>
-
-        <p>
-            <span id="weddingDate"></span>
-        </p>
-
-        <p>
-            <span id="weddingTime"></span>
-        </p>
-
-        <p>
-            <span id="venueName"></span>
-        </p>
-        <p>
-             <span id="venueAddress"></span>
-        </p>
-            <a
-            href="https://maps.google.com"
-            target="_blank"
-            class="map-button"
-        >
-            Lihat Lokasi
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CLOSING
-========================= -->
-
-<section class="closing">
-
-    <div class="section-label">
-        <span id="closingMessage"></span>
-
-    <div class="closing-names">
-        <span id="groomName"></span> & 
-        <span id="brideName"></span>
-    </div>
-
-</section>
-
-
-<!-- =========================
-     COUNTDOWN SCRIPT
-========================= -->
-
-<script>
-
-    const weddingDate =
-        new Date("<span id="weddingDate"></span> <span id="weddingTime"></span>").getTime();
-
-
-    function updateCountdown() {
-
-        const now = new Date().getTime();
-
-        const distance = weddingDate - now;
-
-
-        if (distance <= 0) {
-
-            document.getElementById("days").innerText = "0";
-            document.getElementById("hours").innerText = "0";
-            document.getElementById("minutes").innerText = "0";
-            document.getElementById("seconds").innerText = "0";
-
-            return;
-
-        }
-
-
-        const days =
-            Math.floor(
-                distance /
-                (1000 * 60 * 60 * 24)
-            );
-
-
-        const hours =
-            Math.floor(
-                (distance %
-                    (1000 * 60 * 60 * 24))
-                    /
-                    (1000 * 60 * 60)
-            );
-
-
-        const minutes =
-            Math.floor(
-                (distance %
-                    (1000 * 60 * 60))
-                    /
-                    (1000 * 60)
-            );
-
-
-        const seconds =
-            Math.floor(
-                (distance %
-                    (1000 * 60))
-                    /
-                    1000
-            );
-
-
-        document.getElementById("days")
-            .innerText = days;
-
-        document.getElementById("hours")
-            .innerText = hours;
-
-        document.getElementById("minutes")
-            .innerText = minutes;
-
-        document.getElementById("seconds")
-            .innerText = seconds;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Wedding</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f3ed;
+      color: #3d3935;
+      line-height: 1.7;
+    }
+
+    section {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    /* COVER */
+
+    .cover {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cover-content {
+      width: 100%;
+      max-width: 500px;
+      padding: 30px;
+    }
+
+    .small-title {
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .cover h1 {
+      font-size: 55px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .cover-date {
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+
+      padding: 12px 28px;
+
+      border: 1px solid white;
+      border-radius: 30px;
+
+      color: white;
+      text-decoration: none;
+
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: white;
+      color: #333;
+    }
+
+    /* GENERAL */
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: #8d8275;
+      margin: 20px auto 30px;
+    }
+
+    /* WELCOME */
+
+    #welcome {
+      background: #f7f3ed;
+    }
+
+    #openingMessage {
+      max-width: 650px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    /* COUPLE */
+
+    .couple {
+      background: #fffdf9;
+    }
+
+    .couple-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .person h3 {
+      font-size: 28px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .person p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+      background: #ebe5dc;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+
+      max-width: 500px;
+      margin: 35px auto 0;
+    }
+
+    .countdown-box {
+      background: white;
+      padding: 18px 5px;
+      border-radius: 8px;
+    }
+
+    .countdown-box span {
+      display: block;
+    }
+
+    .number {
+      font-size: 28px;
+    }
+
+    .label {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #777;
+    }
+
+    /* EVENT */
+
+    .event {
+      background: #fffdf9;
+    }
+
+    .event-box {
+      max-width: 500px;
+      margin: 35px auto 0;
+
+      padding: 35px 20px;
+
+      border: 1px solid #ddd3c6;
+      border-radius: 10px;
+    }
+
+    .event-box h3 {
+      font-size: 27px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .event-box p {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    /* MESSAGE */
+
+    .message {
+      background: #ebe5dc;
+    }
+
+    .message p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    /* CLOSING */
+
+    .closing {
+      min-height: 70vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url("https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=1200&q=80");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .closing-content {
+      max-width: 650px;
+    }
+
+    .closing p {
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .closing h2 {
+      font-size: 35px;
+      font-weight: normal;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 25px;
+      text-align: center;
+
+      background: #3d3935;
+      color: white;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      .cover h1 {
+        font-size: 42px;
+      }
+
+      .cover-date {
+        font-size: 15px;
+      }
+
+      .couple-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 300px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
 
     }
 
+  </style>
+</head>
 
-    updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+<body>
 
-</script>
-<script src="data.js"></script>
-<script src="script.js"></script>
+
+  <!-- COVER -->
+
+  <section class="cover">
+
+    <div class="cover-content">
+
+      <div class="small-title">
+        The Wedding Of
+      </div>
+
+      <h1>
+        <span id="groomName"></span>
+        &
+        <span id="brideName"></span>
+      </h1>
+
+      <div class="cover-date">
+        <span id="weddingDate"></span>
+      </div>
+
+      <a href="#welcome" class="button">
+        Buka Undangan
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- WELCOME -->
+
+  <section id="welcome">
+
+    <div class="container">
+
+      <div class="small-title">
+        Welcome
+      </div>
+
+      <h2 class="section-title">
+        Undangan Pernikahan
+      </h2>
+
+      <div class="divider"></div>
+
+      <p id="openingMessage"></p>
+
+    </div>
+
+  </section>
+
+
+  <!-- COUPLE -->
+
+  <section class="couple">
+
+    <div class="container">
+
+      <div class="small-title">
+        Bride & Groom
+      </div>
+
+      <h2 class="section-title">
+        Mempelai
+      </h2>
+
+      <div class="divider"></div>
+
+
+      <div class="couple-grid">
+
+
+        <div class="person">
+
+          <h3>
+            <span id="groomFullName"></span>
+          </h3>
+
+          <p>
+            <span id="groomParents"></span>
+          </p>
+
+        </div>
+
+
+        <div class="person">
+
+          <h3>
+            <span id="brideFullName"></span>
+          </h3>
+
+          <p>
+            <span id="brideParents"></span>
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COUNTDOWN -->
+
+  <section class="countdown-section">
+
+    <div class="container">
+
+      <div class="small-title">
+        Save The Date
+      </div>
+
+      <h2 class="section-title">
+        Menuju Hari Bahagia
+      </h2>
+
+      <div class="divider"></div>
+
+
+      <div class="countdown">
+
+
+        <div class="countdown-box">
+
+          <span
+            class="number"
+            id="days">
+            0
+          </span>
+
+          <span class="label">
+            Hari
+          </span>
+
+        </div>
+
+
+        <div class="countdown-box">
+
+          <span
+            class="number"
+            id="hours">
+            0
+          </span>
+
+          <span class="label">
+            Jam
+          </span>
+
+        </div>
+
+
+        <div class="countdown-box">
+
+          <span
+            class="number"
+            id="minutes">
+            0
+          </span>
+
+          <span class="label">
+            Menit
+          </span>
+
+        </div>
+
+
+        <div class="countdown-box">
+
+          <span
+            class="number"
+            id="seconds">
+            0
+          </span>
+
+          <span class="label">
+            Detik
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EVENT -->
+
+  <section class="event">
+
+    <div class="container">
+
+      <div class="small-title">
+        Wedding Event
+      </div>
+
+      <h2 class="section-title">
+        Acara Pernikahan
+      </h2>
+
+      <div class="divider"></div>
+
+
+      <div class="event-box">
+
+        <h3>
+          <span id="venueName"></span>
+        </h3>
+
+        <p>
+          <strong>Tanggal</strong>
+        </p>
+
+        <p>
+          <span id="weddingDate"></span>
+        </p>
+
+        <br>
+
+        <p>
+          <strong>Waktu</strong>
+        </p>
+
+        <p>
+          <span id="weddingTime"></span>
+        </p>
+
+        <br>
+
+        <p>
+          <strong>Lokasi</strong>
+        </p>
+
+        <p>
+          <span id="venueAddress"></span>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MESSAGE -->
+
+  <section class="message">
+
+    <div class="container">
+
+      <div class="small-title">
+        Our Story
+      </div>
+
+      <h2 class="section-title">
+        Dengan Penuh Kebahagiaan
+      </h2>
+
+      <div class="divider"></div>
+
+      <p>
+        Terima kasih atas doa dan perhatian
+        yang diberikan kepada kami.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CLOSING -->
+
+  <section class="closing">
+
+    <div class="closing-content">
+
+      <p id="closingMessage"></p>
+
+      <h2>
+
+        <span id="groomNameClosing"></span>
+        &
+        <span id="brideNameClosing"></span>
+
+      </h2>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Wedding Invitation
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+
+  <script>
+
+    /*
+      Mengisi nama di bagian closing.
+      Data utama tetap berasal dari data.js.
+    */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      document.getElementById("groomNameClosing").textContent =
+        wedding.groom.name;
+
+      document.getElementById("brideNameClosing").textContent =
+        wedding.bride.name;
+
+    });
+
+  </script>
+
 
 </body>
+
 </html>
