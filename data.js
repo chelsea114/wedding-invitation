@@ -13,6 +13,7 @@ const wedding = {
 
   date: "12 Desember 2026",
   time: "11.00 WIB",
+  countdown: "2026-12-12T11:00:00+07:00",
 
   venue: {
     name: "Gedung Pernikahan Pontianak",
